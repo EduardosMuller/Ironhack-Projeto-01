@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/Initial.jpg');
+  background-repeat: no-repeat;
+  background-size: 1330px 650px;
+}
+
+canvas {
+  right:12%;
+  bottom: 4%;
+  position: fixed;
+}
+
+#score {
+  padding: 10% 10%;
+  
+}
+
+button{
+  position: fixed;
+  background: none;
+  padding: 2%;
+  margin-left: 15%;
+  border: none;
+}
+.button1{
+  top:20%;
+  left:27%
+}
+#reset{
+  right:12%;
+  top:20%;
+}
+
+ul{
+  position: fixed;
+  left:20%;
+  top:25%;
+  list-style: none;
+}
+
+
