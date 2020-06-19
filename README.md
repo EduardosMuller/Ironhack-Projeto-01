@@ -16,9 +16,4 @@ Use W to move Up, S to move Down and F to fire. if a zombie comes to your house 
  <li>Push to the branch (git push origin feature/fooBar)</li>
  <li>Create a new Pull Request</li>
  </ol>
- 
- ![]https://ibb.co/Ptk9Zbk
-
-<img src="https://ibb.co/Ptk9Zbk" alt="Captura-de-tela-de-2020-06-18-23-07-33" border="0">
-
 
