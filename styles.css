@@ -8,7 +8,6 @@ body {
   height: 100%;
   background-image: url('images/Initial.jpg');
   background-repeat: no-repeat;
-  background-size: 1330px 650px;
 }
 
 canvas {
