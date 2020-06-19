@@ -10,16 +10,16 @@ window.onload = () => {
   let frames = 0;
   let score = 0;
   const images = {
-    backgroundI: "./images/backGround.png",
-    plantI: "./images/plant1.png",
-    zombieI: "./images/zombie.png",
-    shootI: "./images/pea.png",
-    gameOverI: "./images/Game_Over.jpg"
+    backgroundI: "images/backGround.png",
+    plantI: "images/plant1.png",
+    zombieI: "images/zombie.png",
+    shootI: "images/pea.png",
+    gameOverI: "images/Game_Over.jpg"
   };
-  let themeSound = "./sounds/MainTheme.mp3";
-  let zombiesAreComingSound = "./sounds/zombiesAreComing.mp3"
-  let shootEfect = "./sounds/shoot.ogg"
-  let gameOverSound = "./sounds/EndGame.mp3"
+  let themeSound = "sounds/MainTheme.mp3";
+  let zombiesAreComingSound = "sounds/zombiesAreComing.mp3"
+  let shootEfect = "sounds/shoot.ogg"
+  let gameOverSound = "sounds/EndGame.mp3"
 
 // Classes de nossos componentes.
 
