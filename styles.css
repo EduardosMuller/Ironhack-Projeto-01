@@ -8,8 +8,7 @@ body {
   height: 100%;
   background-image: url('images/Initial.jpg');
   background-repeat: no-repeat;
-
-  
+  background-size: cover;
 }
 
 canvas {
@@ -20,7 +19,12 @@ canvas {
 
 #score {
   padding: 10% 10%;
-  
+  position: fixed;
+  left:45%;
+  top:18.4%;
+  list-style: none;
+  z-index: 1;
+color: green;
 }
 
 button{
@@ -31,19 +35,21 @@ button{
   border: none;
 }
 .button1{
-  top:20%;
-  left:27%
+  top:40%;
+  left:12%
 }
 #reset{
-  right:12%;
-  top:20%;
+  left:12%;
+  top:60%;
 }
 
 ul{
   position: fixed;
-  left:20%;
-  top:25%;
+  left:8%;
+  top:35%;
   list-style: none;
 }
+
+
 
 

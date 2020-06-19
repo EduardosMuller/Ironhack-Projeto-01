@@ -4,11 +4,10 @@ window.onload = () => {
   const ctx = canvas.getContext("2d");
   let shoots = 1000
   let shootsArr=[]
-  let shooting = false;
   let zombiesArmy = [];
   let interval;
   let frames = 0;
-  let score = 0;
+  let score= 0;
   const images = {
     backgroundI: "images/backGround.png",
     plantI: "images/plant1.png",
@@ -20,7 +19,7 @@ window.onload = () => {
   let zombiesAreComingSound = "sounds/zombiesAreComing.mp3"
   let shootEfect = "sounds/shoot.ogg"
   let gameOverSound = "sounds/EndGame.mp3"
-
+ 
 // Classes de nossos componentes.
 
   class BoardGame {
@@ -55,10 +54,6 @@ window.onload = () => {
       this.speedY=0
     }
    
-    setShoot(plantShooter){
-      shootsArr.unshift(new Bullet(plantShooter,this.eixoX+ 30, this.eixoY+ 10))
-    }
-    
     
     draw() {
       if (this.eixoSX > 2860) this.eixoSX = 0;
@@ -121,17 +116,17 @@ window.onload = () => {
     }
     
     colisions(obstacle) {
-      return !
+      return (
         this.eixoX < obstacle.eixoX + 220 &&
-        this.eixoX + 15 > obstacle.eixoX + 80 &&
-        this.eixoY < obstacle.eixoY + 117 &&
-        this.eixoY + 15 > obstacle.eixoY
+        this.eixoX + 15 > obstacle.eixoX + 80 ||
+        this.eixoY < obstacle.eixoY + 117 ||
+        this.eixoY + 15 > obstacle.eixoY)
       ;
     }
   }
 
   // Variveis encapsuladas
-//  const ball = new Bullet((balls()));
+  const bullet = new Bullet()
   const board = new BoardGame(images.backgroundI);
   const endGame= new GameOver();
   const plant = new Plant(100,150);
@@ -145,7 +140,8 @@ window.onload = () => {
     // ball.draw();
     summonZombies(zombiesArmy);
     frames++;
-
+    scor()
+    kill()
     if (frames % 20 === 0) {
       zombiesArmy.unshift(new Zombie(randomPosition()));
     }
@@ -153,12 +149,13 @@ window.onload = () => {
       shoots = 0
     } else if (shoots > 0){
       shootsArr.forEach(ball => {
-        ball.draw(plant.eixoY);
+        ball.draw(plant.eixoY+ 10);
         ball.move();
       });
     }
     checkColision(); 
   }
+
   function randomPosition() {
     let yPositions = [15, 75, 160, 230, 300];
     let randonY = yPositions[Math.floor(Math.random() * yPositions.length)];
@@ -169,13 +166,26 @@ function buttonDisable() {
     document.getElementById("plant").style.visibility = "hidden";
     start();
   }
+
   function start() {
     if (interval) return;
     interval = setInterval(update, 1000 / 20);
     board.sound.play()
     board.sound2.play() 
   }
+  function scor() {
+    const points = Math.floor(frames / 5);
+    ctx.font = '22px House ';
+    ctx.fillStyle = 'green';
+    ctx.fillText(`Score: ${points}`, 250, 20);
+  }
 
+  function kill(){
+    let kills = score;
+    ctx.font = "22px House";
+    ctx.fillStyle ="green";
+    ctx.fillText(`Kills: ${kills}`, 130 , 20)
+  }
   function summonZombies(zombiesArmy) {
     zombiesArmy.slice(0, 30).forEach(zombie => {
       zombie.draw();
@@ -188,6 +198,7 @@ function buttonDisable() {
     endGame.draw();
     board.sound.pause();
     endGame.sound.play()
+   
   }
 
   function shoot() {
@@ -202,7 +213,7 @@ function buttonDisable() {
           shootsArr.splice(shootIndex, 1);
           zombiesArmy.splice(zombieIndex, 1);
           score ++
-          
+         
         }
       });
     });
@@ -235,6 +246,7 @@ function buttonDisable() {
         break;
       case 70:  //F to Shoot
        shoot()
+       bullet.sound.play()
         break;
       default:
         break;
