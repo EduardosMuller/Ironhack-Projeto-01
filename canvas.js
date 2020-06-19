@@ -116,11 +116,11 @@ window.onload = () => {
     }
     
     colisions(obstacle) {
-      return (
-        this.eixoX < obstacle.eixoX + 220 &&
-        this.eixoX + 15 > obstacle.eixoX + 80 ||
-        this.eixoY < obstacle.eixoY + 117 ||
-        this.eixoY + 15 > obstacle.eixoY)
+      return !(
+        this.eixoX < obstacle.eixoX ||
+        this.eixoX > obstacle.eixoX ||
+        this.eixoY < obstacle.eixoY  ||
+        this.eixoY  > obstacle.eixoY)
       ;
     }
   }
@@ -166,6 +166,7 @@ function buttonDisable() {
     document.getElementById("plant").style.visibility = "hidden";
     start();
   }
+
 
   function start() {
     if (interval) return;
