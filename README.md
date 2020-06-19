@@ -6,7 +6,7 @@
 Instructions for playing the Game!
 
 <ol>
- <li> Click <a href="https://eduardosmuller.github.io/Ironhack-Projeto-01/> Here </a> to play. </li>
+ <li> Click <a href="https://eduardosmuller.github.io/Ironhack-Projeto-01/"> Here </a> to play. </li>
  <li> Click the play button to start the game </li>
  <li> Click the reset button to restart the game </li>
 <li> Use the W and S keys to move up and down </li>
